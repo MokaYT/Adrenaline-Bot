@@ -1,0 +1,28 @@
+name: Run Discord Bot 24/7
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch: # Allows manual start of the workflow
+
+jobs:
+  run-bot:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Set Up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Run Discord Bot
+        run: |
+          echo "Starting bot..."
+          node index.js
