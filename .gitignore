@@ -131,3 +131,12 @@ dist
 
 # Replit debugger
 .breakpoints
+
+node_modules/
+.env
+.cache/
+.local/
+.config/
+.upm/
+replit.nix
+replit_zip_error_log
